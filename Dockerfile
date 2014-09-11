@@ -1,8 +1,8 @@
-FROM itriage/node
+FROM node:latest
 
-WORKDIR /mnt/app
-ENV PORT 3535
-EXPOSE 3535
+ADD . /srv/app
+WORKDIR /srv/app
 RUN ["npm", "install"]
 
-CMD ["node", "server.js"]
+EXPOSE 3535
+ENTRYPOINT ["node"]
