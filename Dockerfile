@@ -4,4 +4,4 @@ WORKDIR /mnt/app
 
 RUN ["npm", "install"]
 
-ENTRYPOINT ["node", "index.js"]
+ENTRYPOINT ["node", "server.js"]
