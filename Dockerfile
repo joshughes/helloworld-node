@@ -5,4 +5,4 @@ WORKDIR /srv/app
 RUN ["npm", "install"]
 
 EXPOSE 3535
-ENTRYPOINT ["node"]
+CMD ["node", "server.js"]
