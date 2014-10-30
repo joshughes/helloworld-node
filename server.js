@@ -1,11 +1,21 @@
 var express = require('express')
 var app = express()
 var port = process.env.PORT || 3535
+var path = require('path')
+var morgan = require('morgan')
+
+app.use(express.static(__dirname + '/public'))
+app.set('view engine', 'html')
+app.engine('html', require('ejs').renderFile)
+app.set('views', path.join(__dirname, 'views'))
+app.use(morgan('combined'))
+
+
+
 app.get('/', function(req, res){
-  var test = JSON.stringify({status: 200, route: '/', message: 'success'})
-  console.log(test)
-  res.send('hello world')
+  res.render('index', {header: 'hello sample app'})
 })
+
 //change
 app.listen(port, function (){
     console.log('App is listening on port ' + port)
