@@ -16,6 +16,10 @@ app.get('/', function(req, res){
   res.render('index', {header: 'hello sample app'})
 })
 
+app.get('/ping', function(req, res){
+  res.render('index', {header: 'pong'})
+})
+
 //change
 app.listen(port, function (){
     console.log('App is listening on port ' + port)
