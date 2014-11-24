@@ -6,4 +6,4 @@ RUN ["npm", "install"]
 
 EXPOSE 3535
 
-CMD ["node", "/srv/app/server.js"]
+ENTRYPOINT node /srv/app/server.js
